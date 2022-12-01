@@ -31,6 +31,10 @@ class AppAutoLauncherImplMacOS extends AppAutoLauncher {
       <string>$appPath</string>
       ${args.map((e) => '<string>$e</string>').join("\n")}
     </array>
+    <key>AssociatedBundleIdentifiers</key>
+    <array>
+      <string>$appName</string>
+    </array>
     <key>RunAtLoad</key>
     <true/>
     <key>ProcessType</key>
