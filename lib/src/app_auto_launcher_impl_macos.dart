@@ -26,8 +26,6 @@ class AppAutoLauncherImplMacOS extends AppAutoLauncher {
   <dict>
     <key>Label</key>
     <string>$appName</string>
-    <key>Program></key>
-    <string>$appPath</string>
     <key>ProgramArguments</key>
     <array>
       <string>$appPath</string>
