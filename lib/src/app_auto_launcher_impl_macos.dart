@@ -9,7 +9,8 @@ class AppAutoLauncherImplMacOS extends AppAutoLauncher {
     List<String> args = const [],
   }) : super(appName: appName, appPath: appPath, args: args);
 
-  File get _plistFile => File('$appPath/Library/LaunchAgents/$appName.plist');
+  File get _plistFile => File(
+      '${Platform.environment['HOME']}/Library/LaunchAgents/$appName.plist');
 
   @override
   Future<bool> isEnabled() async {
@@ -25,13 +26,17 @@ class AppAutoLauncherImplMacOS extends AppAutoLauncher {
   <dict>
     <key>Label</key>
     <string>$appName</string>
-    <key>BundleProgram></key>
+    <key>Program></key>
     <string>$appPath</string>
     <key>ProgramArguments</key>
     <array>
       <string>$appPath</string>
       ${args.map((e) => '<string>$e</string>').join("\n")}
     </array>
+    <key>AssociatedBundleIdentifiers</key>
+      <array>
+          <string>$appName</string>
+      </array>
     <key>RunAtLoad</key>
     <true/>
     <key>ProcessType</key>
