@@ -32,9 +32,9 @@ class AppAutoLauncherImplMacOS extends AppAutoLauncher {
       ${args.map((e) => '<string>$e</string>').join("\n")}
     </array>
     <key>AssociatedBundleIdentifiers</key>
-      <array>
-          <string>$appName</string>
-      </array>
+    <array>
+      <string>$appName</string>
+    </array>
     <key>RunAtLoad</key>
     <true/>
     <key>ProcessType</key>
